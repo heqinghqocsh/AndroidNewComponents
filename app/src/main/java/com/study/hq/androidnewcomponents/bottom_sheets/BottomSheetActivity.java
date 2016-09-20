@@ -32,18 +32,19 @@ public class BottomSheetActivity extends FragmentActivity implements View.OnClic
         button3.setOnClickListener(this);
 
         mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+        mBottomSheetBehavior.setPeekHeight(120);
 
         mBottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
                 if (newState == BottomSheetBehavior.STATE_COLLAPSED) {
-                    mBottomSheetBehavior.setPeekHeight(0);
+                    mBottomSheetBehavior.setPeekHeight(120);
                 }
             }
 
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-
+                mBottomSheetBehavior.setPeekHeight((int)slideOffset);
             }
         });
 
@@ -57,7 +58,7 @@ public class BottomSheetActivity extends FragmentActivity implements View.OnClic
                 break;
             }
             case R.id.button_2: {
-                mBottomSheetBehavior.setPeekHeight(300);
+                mBottomSheetBehavior.setPeekHeight(120);
                 mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 break;
             }

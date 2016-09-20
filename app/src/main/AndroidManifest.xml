@@ -12,6 +12,10 @@
 
         </activity>
         <activity android:name=".bottom_sheets.BottomSheetActivity">
+
+        </activity>
+
+        <activity android:name=".tab_layout.TabLayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
